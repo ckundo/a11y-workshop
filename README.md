@@ -98,3 +98,16 @@
 ### Articles
 
 - [Notes On Client-Rendered Accessibility](http://www.smashingmagazine.com/2015/05/client-rendered-accessibility/)
+
+## Tools
+
+### Editors
+
+- [Textmate](http://macromates.com/) - OS X, accessible with VoiceOver
+- [Notepad++](https://notepad-plus-plus.org/) - Windows, accessible with JAWS
+
+### Screen readers
+
+- VoiceOver - OS X (Command F5 to enable)
+- [NVDA](http://www.nvaccess.org/download/) - Windows
+- [JAWS](http://www.freedomscientific.com/downloads/jaws)

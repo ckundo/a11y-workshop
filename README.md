@@ -1,4 +1,12 @@
-# A11y Workshop
+# Accessible Development with JavaScript and HTML5
+
+Learn how to design, test, and build accessible UI components with HTML5, Sass,
+and jQuery, demonstrated by designers and developers at
+[thoughtbot](http://thoughtbot.com).
+
+In the process, learn about types of disabilities, standards and requirements,
+motivations for accessibility, along with testing tools and accessible UI
+libraries.
 
 ## Who?
 
@@ -18,7 +26,7 @@
 
 ### Hearing
 
-- Deafness
+- Deafness and hard of hearing
 
 ### Vision
 
@@ -28,13 +36,13 @@
 
 ## Why?
 
-- Opportunity
 - Legal obligation
 - Social responsibility
+- Opportunity
 
 ***
 
-## Building Accessibility
+## Building Accessibly
 
 ### Learn
 
@@ -44,16 +52,12 @@
 - Twitter #a11y
 - [A11yNYC meetup](http://www.meetup.com/a11ynyc)
 
-### Measure & Capture
+### Measure, Capture, Prioritize
 
 - Usability testing
 - Manual testing (keyboard, screenreader)
 - Automated tools
 - Bug tracking
-
-### Prioritize
-
-- Unblock conversion
 
 ### Fix
 
@@ -95,7 +99,7 @@
 - [Todo List](https://dylanb.github.io/todomvc/index.html#/)
 - [Ticket Booking](https://marcysutton.github.io/angular-a11y/demos/scroll-ui/)
 
-### Articles
+## Articles
 
 - [Notes On Client-Rendered Accessibility](http://www.smashingmagazine.com/2015/05/client-rendered-accessibility/)
 

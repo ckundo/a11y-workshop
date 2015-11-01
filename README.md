@@ -1,19 +1,72 @@
 # A11y Workshop
 
-A two day workshop on web accessibility.
+## Who?
 
-## Schedule
+### Cognitive
 
-### Day 1
+- Memory
+- Attention
+- Problem-solving
+- Language comprehension
+- Math comprehension
+- Visual comprehension
 
-#### Usability study
+### Motor
 
-## Topics
+- Injury
+- Congenital
 
-- Standards and Guidelines
-- UI Frameworks
-- Testing Tools
-- Examples and Articles
+### Hearing
+
+- Deafness
+
+### Vision
+
+- Blindness
+- Low vision
+- Color blindness
+
+## Why?
+
+- Opportunity
+- Legal obligation
+- Social responsibility
+
+***
+
+## Building Accessibility
+
+### Learn
+
+- Blogs
+- Stack overflow
+- [web-a11y slack](http://web-a11y.herokuapp.com)
+- Twitter #a11y
+- [A11yNYC meetup](http://www.meetup.com/a11ynyc)
+
+### Measure & Capture
+
+- Usability testing
+- Manual testing (keyboard, screenreader)
+- Automated tools
+- Bug tracking
+
+### Prioritize
+
+- Unblock conversion
+
+### Fix
+
+- Writing tests
+- ARIA and native semantics
+- Managing regressions
+
+### Monitor
+
+- CI tests
+- Accessibile support tools (email)
+
+***
 
 ### Legal Standards
 

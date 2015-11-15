@@ -15,7 +15,7 @@ understanding of web development with HTML will help you follow along.
 
 ### Equipment
 
-- Laptop (OS X or Windows 8+)
+- Laptop (OS X, Windows 8+, or Linux with screen reader installed)
 - Headphones (for when we turn on our screen readers).
 
 ### Software

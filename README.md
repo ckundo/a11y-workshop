@@ -8,6 +8,43 @@ In the process, learn about types of disabilities, standards and requirements,
 motivations for accessibility, along with testing tools and accessible UI
 libraries.
 
+## Requirements
+
+We'll be doing live coding exercises with HTML, CSS, and JavaScript. A baseline
+understanding of web development with HTML will help you follow along.
+
+### Equipment
+
+- Laptop
+- Headphones (for when we turn on our screen readers).
+
+### Software
+
+#### Screen readers
+
+OS X has a built-in screen reader called VoiceOver. For Windows, you can install
+one of the screen readers listed here:
+
+- [NVDA](http://www.nvaccess.org/download/) - Windows, donation-ware, open source
+- [JAWS](http://www.freedomscientific.com/downloads/jaws) - Windows, free trial
+
+#### Editors
+
+Use the text editor of your choice for coding. Textmate is a friendly and
+powerful editor on OS X that also works well for blind developers using
+VoiceOver. Notepad++ on Windows works well with the JAWS screen reader.
+
+- [Textmate](http://macromates.com/) - OS X, accessible with VoiceOver
+- [Notepad++](https://notepad-plus-plus.org/) - Windows, accessible with JAWS
+
+#### Browsers
+
+We'll be using Safari for screen reader demoing and Chrome for inspecting page
+elements. Use whatever browser you like, keeping in mind that VoiceOver works
+best with Safari, JAWS with IE, and NVDA with Firefox (on Windows).
+
+***
+
 ## Who?
 
 ### Cognitive
@@ -103,15 +140,3 @@ libraries.
 
 - [Notes On Client-Rendered Accessibility](http://www.smashingmagazine.com/2015/05/client-rendered-accessibility/)
 
-## Tools
-
-### Editors
-
-- [Textmate](http://macromates.com/) - OS X, accessible with VoiceOver
-- [Notepad++](https://notepad-plus-plus.org/) - Windows, accessible with JAWS
-
-### Screen readers
-
-- VoiceOver - OS X (Command F5 to enable)
-- [NVDA](http://www.nvaccess.org/download/) - Windows
-- [JAWS](http://www.freedomscientific.com/downloads/jaws)

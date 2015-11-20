@@ -127,8 +127,16 @@ best with Safari, JAWS with IE, and NVDA with Firefox (on Windows).
 
 ## Testing
 
+### Libraries
+
+- [Accessibility Developer Tools](https://github.com/GoogleChrome/accessibility-developer-tools)
+- [axe-core](https://github.com/dequelabs/axe-core)
+
+### Extensions 
+
+- [aXe Chrome Extension](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd)
+- [aXe Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/) 
 - [Accessibility Developer Tools Extension](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en)
-- [Axe-core](https://github.com/dequelabs/axe-core)
 - [tota11y](https://khan.github.io/tota11y/)
 
 ## Examples

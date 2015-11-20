@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Test Page</title>
+  </head>
+  <body>
+    <audio id="empty"></audio>
+    <audio id="caption"><track kind="captions"></audio>
+
+    <p><blink id="blinky">This document is going to fail the blinking test, due to how this sentence is wrapped in a blink tag.</blink></p>
+
+    <button id="empty"></button>
+    <button id="text">Name</button>
+    <button id="val" value="Button Name"></button>
+    <button id="al" aria-label="Name"></button>
+    <button id="alempty" aria-label=""></button>
+    <button id="alb" aria-labelledby="labeldiv"></button>
+    <button id="albmissing" aria-labelledby="nonexistent"></button>
+    <button id="albempty" aria-labelledby="emptydiv"></button>
+    <div id="labeldiv">Button label</div>
+    <div id="emptydiv"></div>
+    <button id="combo" aria-label="Aria Name">Name</button>
+    <button id="dupetext"><img alt="Link text">Link text</button>
+    <button id="oktext"><img alt="Img alt text">Link text</button>
+
+    <form action="#">
+      <input type="checkbox" id="noname">
+      <input type="checkbox" name="dupe" id="fail1">
+      <input type="checkbox" name="dupe">
+      <input type="checkbox" name="single" id="pass1">
+      <input type="checkbox" name="label" id="pass2" aria-labelledby="grouplabel">
+      <input type="checkbox" name="label" aria-labelledby="grouplabel">
+
+      <div id="grouplabel">Label</div>
+
+      <fieldset>
+        <legend>Name</legend>
+        <input type="checkbox" name="fieldset" id="pass3">
+        <input type="checkbox"name="fieldset" id="pass3a">
+        <input type="hidden" name="hiddeninput">
+      </fieldset>
+
+      <div role="group" aria-label="Test">
+        <input type="checkbox" name="fieldset2" id="pass4">
+        <input type="checkbox"name="fieldset2" id="pass4a">
+      </div>
+
+      <div role="group" aria-labelledby="grouplabel">
+        <input type="checkbox" name="fieldset3" id="pass5">
+        <input type="checkbox"name="fieldset3" id="pass5a">
+      </div>
+
+      <fieldset>
+        <legend>Hello</legend>
+        <input type="checkbox" name="fieldset4" id="pass6">
+        <input type="checkbox" name="fieldset4" id="pass6a">
+      </fieldset>
+
+      <fieldset>
+        <legend>Hello Again</legend>
+        <input type="checkbox" name="fieldset4" id="pass6b">
+        <input type="checkbox" name="fieldset4" id="pass6c">
+      </fieldset>
+    </form>
+
+    <div id="pass7" style="background-color: white; color: black">This is a pass.</div>
+    <div id="pass8" style="background-color: gray; color: white; font-size: 40px;">This is a pass.</div>
+    <div id="pass9" style="background-color: gray; color: white; font-size: 20px; font-weight: bold">This is a pass.</div>
+    <div id="fail2" style="background-color: gray; color: white; font-size: 20px;">This is a fail.<b id="pass4">But this is a pass.</b></div>
+    <div id="fail3" style="background-color: gray; color: white; font-size: 8px;">This is a fail.</div>
+    <div id="fail4" style="background-color: yellow; color: white; font-size: 40px;">This is a fail.</div>
+    <div style="background-color: black;"><div style="background-color: rgba(255, 255, 255, 0.1); color: white" id="pass5">Pass.</div></div>
+    <div style="background-color: rgba(255, 255, 255, 0.1); color: white" id="pass6">Pass by default.</div>
+    <div style="background-color: white;"><div style="background-color: rgba(255, 255, 255, 0.1); color: white" id="fail5">Fail.</div></div>
+    <div style="background-color: white; height: 20px; width: 80px;"><div id="pass7" style="color: white; height: 40px; width: 60px;">Hi</div></div>
+    <div style="background-color: white; height: 60px; width: 40px;"><div id="pass8" style="color: white; height: 40px; width: 60px;">Hi</div></div>
+    <div style="background-color: white; height: 60px; width: 80px;"><div id="fail6" style="color: white; height: 40px; width: 60px;">Hi</div></div>
+    <div style="background-color: white; height: 60px; width: 80px;"><div id="pass9" style="margin-left: 80px; color: white; height: 40px; width: 60px;">Hi</div></div>
+    <div style="background-color: white"><div id="fail7" style="opacity: 0.1; background-color: white; color: black">This is a fail.</div></div>
+
+    <div style="background-color: white; height: 60px; width: 80px; overflow: scroll">
+      <div id="fail8" style="margin-left: 80px; color: white; height: 80px; width: 90px;">Hi</div>
+    </div>
+
+    <input id="fail9" style="background: #000; color: #000" value="hello" type="text">
+    <input id="fail10" style="background: #000; color: #000" value="hello" type="button">
+    <input id="fail11" style="background: #000; color: #000" value="hello" type="submit">
+    <input id="fail12" style="background: #000; color: #000" value="hello" type="reset">
+    <select id="fail13" style="background: #000; color: #000">
+      <option>Hello</option>
+    </select>
+    <textarea id="fail14" style="background: #000; color: #000">hello</textarea>
+    <input id="fail15" type="button" style="background: #000; color: #000" value="hello">
+    <input id="fail16" type="reset" style="background: #000; color: #000" value="hello">
+    <input id="fail17" type="submit" style="background: #000; color: #000" value="hello">
+    <input id="fail18" style="background: #000; color: #000" value="hello">
+
+    <!-- shouldnt run -->
+    <input id="ignore0" style="background: #000; color: #000" value="hello" type="hidden">
+    <input id="ignore1" style="background: #000; color: #000" value="hello" type="radio">
+    <input id="ignore2" style="background: #000; color: #000" value="hello" type="checkbox">
+    <input id="ignore3" style="background: #000; color: #000" value="hello" type="range">
+    <input id="ignore4" style="background: #000; color: #000" value="hello" type="hidden">
+    <select id="ignore5" style="background: #000; color: #000"></select>
+    <div id="ignore6" style="color: yellow; width: 100px; overflow: hidden; text-indent: 200px; background-color: white;">text</div>
+    <label style="color: #fff">
+      Test
+      <input type="text" disabled>
+    </label>
+    <label for="disabled1">Hello</label>
+    <input id="disabled1" disabled>
+    <div id="disabled2">Hello</div>
+    <input aria-labelledby="disabled2" disabled>
+
+    <!-- no caption - disabled by default -->
+    <table id="bestpractice1">
+      <tr>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <!-- table cell with no header -->
+    <table id="fail19">
+      <caption>Hello</caption>
+      <tr>
+        <td>1</td>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <!-- no visible text -->
+    <table id="fail20">
+      <caption>Hello</caption>
+      <tr>
+        <th scope="col"><span style="display: none">1</span></th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <!-- bad headers reference -->
+    <table id="fail21">
+      <caption>Hello</caption>
+      <tr>
+        <td headers="foo">1</td>
+        <td headers="bar">2</td>
+      </tr>
+    </table>
+
+    <!-- no scope on TH -->
+    <table id="fail22">
+      <caption>Hello</caption>
+      <tr>
+        <th>1</th>
+        <th>2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <!-- headers attr on TH -->
+    <div id="exist">Hi</div>
+    <table id="fail23">
+      <caption>Hello</caption>
+      <tr>
+        <th headers="exist">1</th>
+        <th headers="exist">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+
+
+    <!-- more than one row of TH column headers -->
+    <table id="fail24">
+      <caption>Hello</caption>
+      <tr>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <!-- more than one column of TH row headers -->
+    <table id="fail25">
+      <caption>Hello</caption>
+      <tr>
+        <th scope="row">1</th>
+        <th scope="row">2</th>
+        <td>3</td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <th scope="row">2</th>
+        <td>3</td>
+      </tr>
+    </table>
+
+    <!-- same caption as summary -->
+    <table id="fail26" summary="Hello">
+      <caption>Hello</caption>
+      <tr>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <!-- rowspan -->
+    <table id="fail27">
+      <caption>Hello</caption>
+      <tr>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td rowspan="2">1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>22</td>
+      </tr>
+    </table>
+
+    <!-- consistent columns -->
+    <table id="fail28">
+      <caption>Hello</caption>
+      <tr>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+    </table>
+
+
+    <!-- layout tables -->
+    <table role="presentation">
+      <tr>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <table role="none">
+      <tr>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td>hi</td>
+      </tr>
+      <tr>
+        <td>hi</td>
+      </tr>
+      <tr>
+        <td>hi</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+      </tr>
+    </table>
+
+
+    <table id="pass10">
+      <caption>Hello</caption>
+      <tr>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <!-- table w/ aria-label -->
+    <table id="pass11" role="grid">
+      <tbody>
+        <tr role="row">
+          <td class="text" role="gridcell" aria-label="Text-level semantics"><a href="javascript:;"><span>link</span></a></td>
+          <td class="interactive" role="gridcell" aria-label="Interactive"><a href="javascript:;"><span>alert</span></a></td>
+          <td class="interactive" role="cell" aria-label="Interactive"><a href="javascript:;"><span>alertdialog</span></a></td>
+          <td class="invisible" role="presentation"></td>
+          <td class="invisible" role="presentation"></td>
+          <td class="invisible" role="presentation"></td>
+          <td class="invisible" role="presentation"></td>
+          <td class="invisible" role="none"></td>
+          <td class="structure" role="gridcell" aria-label="Document structure"><a href="javascript:;"><span>none</span></a></td>
+          <td class="structure" role="gridcell" aria-label="Document structure"><a href="javascript:;"><span>presen-tation</span></a></td>
+          <td class="structure" role="gridcell" aria-label="Document structure"><a href="javascript:;"><span>main</span></a></td>
+          <td class="embedding" role="gridcell" aria-label="Embedding content"><a href="javascript:;"><span>img</span></a></td>
+        </tr>
+        <tr role="row">
+          <td class="interactive" role="gridcell" aria-label="Interactive"><a href="javascript:;"><span>log</span></a></td>
+          <td class="interactive" role="gridcell" aria-label="Interactive"><a href="javascript:;"><span>menuitem-radio</span></a></td>
+          <td class="interactive" role="gridcell" aria-label="Interactive"><a href="javascript:;"><span>tab</span></a></td>
+          <td class="interactive" role="cell" aria-label="Interactive"><a href="javascript:;"><span>treeitem</span></a></td>
+          <td class="form" role="gridcell" aria-label="Forms"><a href="javascript:;"><span>form</span></a></td>
+          <td class="form" role="gridcell" aria-label="Forms"><a href="javascript:;"><span>textbox</span></a></td>
+          <td class="form" role="gridcell" aria-label="Forms"><a href="javascript:;"><span>searchbox</span></a></td>
+          <td class="structure" role="cell" aria-label="Document structure"><a href="javascript:;"><span>article</span></a></td>
+          <td class="structure" role="gridcell" aria-label="Document structure"><a href="javascript:;"><span>group</span></a></td>
+          <td class="structure" role="gridcell" aria-label="Document structure"><a href="javascript:;"><span>text</span></a></td>
+          <td class="structure" role="gridcell" aria-label="Document structure"><a href="javascript:;"><span>banner</span></a></td>
+          <td class="table" role="gridcell" aria-label="Tabular data"><a href="javascript:;"><span>grid</span></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- aria-labelledby -->
+    <table id="pass12" role="grid">
+      <tr role="row">
+        <td class="text" role="gridcell" aria-labelledby="text"><a href="javascript:;"><span>link</span></a></td>
+        <td class="invisible" role="presentation"></td>
+        <td class="invisible" role="presentation"></td>
+        <td class="invisible" role="presentation"></td>
+        <td class="invisible" role="presentation"></td>
+        <td class="invisible" role="presentation"></td>
+        <td class="invisible" role="presentation"></td>
+        <td class="invisible" role="presentation"></td>
+        <td class="invisible" role="presentation"></td>
+        <td class="invisible" role="none"></td>
+        <td class="sections" role="gridcell" aria-labelledby="sections"><a href="javascript:;"><span>main</span></a></td>
+        <td class="embedding" role="gridcell" aria-labelledby="embedding"><a href="javascript:;"><span>img</span></a></td>
+      </tr>
+      <tr role="row">
+        <td class="interactive" role="gridcell" aria-labelledby="interactive"><a href="javascript:;"><span>alert</span></a></td>
+        <td class="interactive" role="gridcell" aria-labelledby="interactive"><a href="javascript:;"><span>alertdialog</span></a></td>
+        <td class="interactive" role="gridcell" aria-labelledby="interactive"><a href="javascript:;"><span>menuitem-radio</span></a></td>
+        <td class="interactive" role="cell" aria-labelledby="interactive"><a href="javascript:;"><span>tab</span></a></td>
+        <td class="interactive" role="gridcell" aria-labelledby="interactive"><a href="javascript:;"><span>treeitem</span></a></td>
+        <td class="form" role="gridcell" aria-labelledby="form"><a href="javascript:;"><span>form</span></a></td>
+        <td class="form" role="gridcell" aria-labelledby="form"><a href="javascript:;"><span>textbox</span></a></td>
+        <td class="sections" role="gridcell" aria-labelledby="sections"><a href="javascript:;"><span>article</span></a></td>
+        <td class="sections" role="gridcell" aria-labelledby="sections"><a href="javascript:;"><span>group</span></a></td>
+        <td class="sections" role="gridcell" aria-labelledby="sections"><a href="javascript:;"><span>presen-tation</span></a></td>
+        <td class="sections" role="gridcell" aria-labelledby="sections"><a href="javascript:;"><span>banner</span></a></td>
+        <td class="table" role="cell" aria-labelledby="table"><a href="javascript:;"><span>grid</span></a></td>
+      </tr>
+    </table>
+
+    <h3>Legend</h3>
+    <ul id="legend" class="clearfix">
+      <li class="form" id="form"><div class="icon"></div>Forms</li>
+      <li class="table" id="table"><div class="icon"></div>Tabular data</li>
+      <li class="sections" id="sections"><div class="icon"></div>Document sections</li>
+      <li class="interactive" id="interactive"><div class="icon"></div>Interactive elements</li>
+      <li class="embedding" id="embedding"><div class="icon"></div>Embedding content</li>
+      <li class="text" id="text"><div class="icon"></div>Text-level semantics</li>
+    </ul>
+
+    <dl id="emptydl"></dl>
+
+    <dl id="divdl">
+      <div>This shouldn't be here.</div>
+    </dl>
+
+    <dl id="mixeddl">
+      <dt>Correct.</dt>
+      <dd>Correct.</dd>
+      <div>Wrong.</div>
+    </dl>
+
+    <dl id="repeatdl">
+      <dt>Thing 1</dt>
+      <dd>Thingy 1</dd>
+      <dt>Thing</dt>
+      <dd>Thingy</dd>
+      <dd>Thingy 2</dd>
+    </dl>
+
+    <dl id="properdl">
+      <dt>Thing</dt>
+      <dd>Thingy</dd>
+    </dl>
+
+    <dl id="unordereddl">
+      <dd>Thingy</dd>
+      <dt>Thing</dt>
+    </dl>
+
+    <dl id="scriptdl">
+      <script></script>
+      <template></template>
+      <dt>thang</dt>
+      <dd>thangy</dd>
+    </dl>
+
+    <dl id="emptyscriptdl">
+      <script></script>
+      <template></template>
+    </dl>
+
+    <dl id="mixedscriptdl">
+      <script></script>
+      <template></template>
+      <p>para</p>
+    </dl>
+
+    <dd id="uncontained">Should belong to a list.</dd>
+    <dt id="alsouncontained">Should belong to a list.</dt>
+
+    <dl>
+      <dt id="contained">Does belong to a list.</dt>
+      <dd id="alsocontained">Also belongs to a list.</dd>
+    </dl>
+
+    <p id="dupe">This is my first paragraph with this ID.</p>
+    <p id="dupe">This is my second paragraph with this ID.</p>
+    <p id="single">This is my only paragraph with this ID.</p>
+
+    <h1 id="pass13">Ok</h1>
+    <h2 id="pass14">Ok</h2>
+    <h3 id="pass15">Ok</h3>
+    <h4 id="pass16">Ok</h4>
+    <h5 id="pass17">Ok</h5>
+    <h6 id="pass18">Ok</h6>
+    <div id="pass19" role="heading">Ok</div>
+    <h1 id="fail29"></h1>
+    <h1 id="fail30"><div style="display: none">Not Ok</div></h1>
+    <h1 id="fail31">       </h1>
+    <h3 role="presentation" id="pass20">Should still work</h3>
+    <h3 role="none" id="pass21">Should also work</h3>
+
+    <iframe src="frame-title/frames/level1.html" id="violation1"></iframe>
+    <iframe src="frame-title/frames/level1a.html" title="Duplicated" id="violation3"></iframe>
+    <iframe src="frame-title/frames/level1a.html" title="Duplicated" id="violation4"></iframe>
+
+    <h1 id="heading1">Header</h1>
+    <h1 id="heading2">Header</h1>
+    <h2 id="heading3">Header</h2>
+    <h3 id="heading4">Header</h3>
+    <h1 id="heading5">Header</h1>
+    <h3 id="heading6">Header</h3>
+    <h3 id="heading7">Header</h3>
+
+    <div id="monkeys">Bananas</div>
+    <img src="img.jpg" id="violation1">
+    <img src="img.jpg" id="violation2" aria-label="">
+    <img src="img.jpg" id="violation3" aria-labelledby="nomatchy">
+    <img src="img.jpg" id="violation4" aria-labelledby="">
+    <img src="img.jpg" id="pass22" alt="monkeys">
+    <img src="img.jpg" id="pass23" aria-label="monkeys">
+    <img src="img.jpg" id="pass24" aria-labelledby="monkeys">
+    <img src="img.jpg" id="pass25" alt="">
+    <img src="img.jpg" id="violation5" title="">
+    <img src="img.jpg" id="pass26" title="monkeys">
+    <img src="img.jpg" id="pass27" role="presentation">
+    <img src="img.jpg" id="pass7" role="none">
+
+    <form action="#">
+      <input type="button" id="fail32">
+      <input type="button" id="pass1" value="Button Name">
+      <input type="button" id="pass2" aria-label="Name">
+      <input type="button" id="fail33" aria-label="">
+      <input type="button" id="pass3" aria-labelledby="labeldiv">
+      <input type="button" id="fail34" aria-labelledby="nonexistent">
+      <input type="button" id="fail35" aria-labelledby="emptydiv">
+      <div id="labeldiv">Button label</div>
+      <div id="emptydiv"></div>
+      <input type="button" id="pass4" value="Name" aria-label="Aria Name">
+      <input type="submit" id="pass5">
+      <input type="submit" value="" id="fail36">
+      <input type="submit" value="Something" id="pass6">
+      <input type="reset" id="pass7">
+      <input type="reset" value="" id="fail37">
+      <input type="reset" value="Something" id="pass8">
+    </form>
+    <div id="monkeys">Bananas</div>
+
+    <form action="#">
+      <input type="image" src="img.jpg" id="violation1">
+      <input type="image" src="img.jpg" id="violation2" aria-label="">
+      <input type="image" src="img.jpg" id="violation3" aria-labelledby="nomatchy">
+      <input type="image" src="img.jpg" id="violation4" aria-labelledby="">
+      <input type="image" src="img.jpg" id="pass1" alt="monkeys">
+      <input type="image" src="img.jpg" id="pass2" aria-label="monkeys">
+      <input type="image" src="img.jpg" id="pass3" aria-labelledby="monkeys">
+      <input type="image" src="img.jpg" id="violation5" alt="">
+    </form>
+
+    <form action="#">
+      <input type="hidden" id="na1">
+      <input type="image" id="na2">
+      <input type="button" id="na3">
+      <input type="submit" id="na4">
+      <input type="reset" id="na5">
+      <input type="text" id="fail38">
+      <select id="fail39"></select>
+      <textarea id="fail40"></textarea>
+      <input type="text" aria-label="label" id="pass1">
+      <select aria-label="label" id="pass2"></select>
+      <textarea aria-label="label" id="pass3"></textarea>
+      <input type="text" aria-labelledby="label" id="pass4">
+      <select aria-labelledby="label" id="pass5"></select>
+      <textarea aria-labelledby="label" id="pass6"></textarea>
+      <div id="label">Label</div>
+      <label>Label 	<input type="text" id="pass7"></label>
+      <label>Label 	<select id="pass8"></select></label>
+      <label>Label 	<textarea id="pass9"></textarea></label>
+
+      <label><input type="text" id="fail41"></label>
+      <label><select id="fail42"></select></label>
+      <label><textarea id="fail43"></textarea></label>
+      <label for="fail44"></label><input type="text" id="fail44">
+      <label for="fail45"></label><select id="fail45"></select>
+      <label for="fail46"></label><textarea id="fail46"></textarea>
+      <label for="pass10">Label</label><input type="text" id="pass10">
+      <label for="pass11">Label</label><select id="pass11"></select>
+      <label for="pass12">Label</label><textarea id="pass12"></textarea>
+
+      <input type="text" id="pass13" title="Label">
+      <select id="pass14" title="Label"></select>
+      <textarea id="pass15" title="Label"></textarea>
+
+      <label><label><input type="text" id="fail47"></label></label>
+      <label for="fail48">Hi</label><label for="fail48">Foo</label><input type="text" id="fail48">
+    </form>
+
+    <form action="#">
+      <input type="text" id="fail49" title="Label">
+      <select id="fail50" title="Label"></select>
+      <textarea id="fail51" title="Label"></textarea>
+      <input type="text" id="fail52" aria-describedby="hi">
+
+      <label for="pass1">Hi</label>
+      <input type="text" id="pass1" title="Hello">
+
+      <label>
+        Hi
+        <input type="text" id="pass2" title="Hello">
+      </label>
+
+      <input type="text" id="pass3" title="Hello" aria-label="Hi">
+
+      <div id="hi">Hi</div>
+      <input type="text" id="pass4" title="Hello" aria-labelledby="hi">
+
+
+      <label for="pass5">Hi</label>
+      <input type="text" id="pass5" aria-describedby="hi">
+
+      <label>
+        Hi
+        <input type="text" id="pass6" aria-describedby="hi">
+      </label>
+
+      <input type="text" id="pass7" aria-describedby="hi" aria-label="Hi">
+      <input type="text" id="pass8" aria-describedby="hi" aria-labelledby="hi">
+    </form>
+
+    <a href="#" id="violation1"></a>
+    <a href="#" id="pass1">This link has text</a>
+    <a href="#" id="pass3" aria-label="link text"></a>
+    <a href="#" id="pass4" aria-labelledby="linklabel"></a>
+    <a href="#" id="violation2" aria-labelledby="nonexistent"></a>
+    <a href="#" id="violation3" aria-labelledby="badlabel"></a>
+    <div id="linklabel">Text</div>
+    <div id="badlabel"></div>
+    <span role="link" href="#" tabindex="0" id="violation4"></span>
+    <span role="link" href="#" tabindex="0" id="pass6" aria-labelledby="linklabel"></span>
+    <span role="link" href="#" tabindex="0" id="pass7" aria-label="Link text"></span>
+    <span role="link" href="#" tabindex="0" id="violation5" aria-labelledby="badlabel"></span>
+    <span role="link" href="#" tabindex="0" id="violation6" aria-labelledby="nonexistent"></span>
+    <a href="#" id="bestpractice1"><img alt="Link text">Link text</a>
+    <a href="#" id="pass8"><img alt="Img alt text">Link text</a>
+
+    <a href="#" role="button">Does not apply</a>
+
+    <ul id="emptyul"></ul>
+
+    <ul id="scriptemptyul">
+      <script></script>
+      <template></template>
+    </ul>
+
+    <ul id="divul">
+      <div>This shouldn't be here.</div>
+    </ul>
+
+    <ul id="mixedul">
+      <li>Correct.</li>
+      <div>Wrong.</div>
+    </ul>
+
+    <ul id="properul">
+      <li>One.</li>
+      <li>Two.</li>
+    </ul>
+
+    <ul id="scriptproperul">
+      <script></script>
+      <template></template>
+      <li>One.</li>
+      <li>Two.</li>
+    </ul>
+
+    <ol id="emptyol"></ol>
+
+    <ol id="scriptemptyol">
+      <script></script>
+      <template></template>
+    </ol>
+
+    <ol id="divol">
+      <div>This shouldn't be here.</div>
+    </ol>
+
+    <ol id="mixedol">
+      <li>Correct.</li>
+      <div>Wrong.</div>
+    </ol>
+
+    <ol id="properol"><li>One.</li><li>Two.</li></ol>
+
+    <ol id="scriptproperol">
+      <script></script>
+      <template></template>
+      <li>One.</li>
+      <li>Two.</li>
+    </ol>
+
+    <li id="uncontained">Should belong to a list.</li>
+
+    <ul>
+      <li id="contained">Does belong to a list.</li>
+    </ul>
+
+    <ol>
+      <li id="alsocontained">Also belongs to a list.</li>
+    </ol>
+
+    <marquee id="marqueemarq">This content is inside a marquee.</marquee>
+
+    <meta id="fail53" http-equiv="refresh" content="3000">
+
+    <meta name="viewport" id="mvp" content="maximum-scale=2;">
+
+    <meta name="viewport" id="mvp" content="maximum-scale=10;">
+
+    <object id="pass1">This object has text.</object>
+    <object id="violation1"></object>
+    <object id="violation2"><div> </div></object>
+    <object id="violation3"><p style="display: none;">This object has no text.</p></object>
+
+    <form action="#">
+      <input type="radio" id="noname">
+      <input type="radio" name="dupe" id="fail54">
+      <input type="radio" name="dupe">
+
+      <input type="radio" name="single" id="pass1">
+
+      <input type="radio" name="label" id="pass2" aria-labelledby="grouplabel">
+      <input type="radio" name="label" aria-labelledby="grouplabel">
+      <div id="grouplabel">Label</div>
+      <fieldset>
+        <legend>Name</legend>
+        <input type="radio" name="fieldset" id="pass3">
+        <input type="radio" name="fieldset" id="pass3a">
+        <input type="hidden" name="hiddeninput">
+      </fieldset>
+
+      <div role="group" aria-label="Test">
+        <input type="radio" name="fieldset2" id="pass4">
+        <input type="radio"name="fieldset2" id="pass4a">
+      </div>
+
+      <div role="group" aria-labelledby="grouplabel">
+        <input type="radio" name="fieldset3" id="pass5">
+        <input type="radio"name="fieldset3" id="pass5a">
+      </div>
+
+      <fieldset>
+        <legend>Hello</legend>
+        <input type="radio" name="fieldset4" id="pass6">
+        <input type="radio" name="fieldset4" id="pass6a">
+      </fieldset>
+
+      <fieldset>
+        <legend>Hello Again</legend>
+        <input type="radio" name="fieldset4" id="pass6b">
+        <input type="radio" name="fieldset4" id="pass6c">
+      </fieldset>
+    </form>
+
+    <div role="button" id="empty"></div>
+    <div role="button" id="text">Name</div>
+    <div role="button" id="al" aria-label="Name"></div>
+    <div role="button" id="alempty" aria-label=""></div>
+    <div role="button" id="alb" aria-labelledby="labeldiv"></div>
+    <div role="button" id="albmissing" aria-labelledby="nonexistent"></div>
+    <div role="button" id="albempty" aria-labelledby="emptydiv"></div>
+    <div id="labeldiv">Button label</div>
+    <div id="emptydiv"></div>
+    <div role="button" id="combo" aria-label="Aria Name">Name</div>
+
+    <!-- does not apply -->
+    <input type="image">
+    <table><tr><th id="badvalue" scope="whatever"></th></tr></table>
+    <table><tr><td id="tdrow" scope="row"></td></tr></table>
+    <table><tr><th id="throw" scope="row"></th></tr></table>
+    <table><tr><td id="tdcol" scope="col"></td></tr></table>
+    <table><tr><th id="thcol" scope="col"></th></tr></table>
+
+    <p><img ismap src="image.jpg" id="fail55"></p>
+    <p><img src="image.jpg" id="pass"></p>
+
+    <p tabindex="-1" id="negative">Paragraph.</p>
+    <p tabindex="0" id="zero">Paragraph.</p>
+    <p tabindex="1" id="positive">Paragraph.</p>
+
+    <p lang="en-US" id="pass1">English</p>
+    <p xml:lang="en-US" id="pass2">English</p>
+    <p xml:lang="en-US" lang="en-US" id="pass3">Mix</p>
+    <p xml:lang="de" lang="de" id="pass4">Deutsch</p>
+    <p lang="af" id="pass5">Afrikaans</p>
+
+    <p lang="gibberish-US" id="fail56">Not English</p>
+    <p xml:lang="gibberish-US" id="fail57">Not English</p>
+    <p xml:lang="en-US" lang="gibberish-US" id="fail58">Mix</p>
+
+    <video id="fail59"></video>
+    <video id="fail60"><track kind="descriptions"></video>
+    <video id="pass1"><track kind="captions"></video>
+    <video id="pass2"><track kind="descriptions"><track kind="captions"></video>
+
+    <video id="fail61"></video>
+    <video id="fail62"><track kind="captions"></video>
+    <video id="pass1"><track kind="descriptions"></video>
+    <video id="pass2"><track kind="descriptions"><track kind="captions"></video>
+  </body>
+</html>

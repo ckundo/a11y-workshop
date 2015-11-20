@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>A11y-workshop by ckundo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">A11y-workshop</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/ckundo/a11y-workshop" class="btn">View on GitHub</a>
+      <a href="https://github.com/ckundo/a11y-workshop/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ckundo/a11y-workshop/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="accessible-development-with-html-5" class="anchor" href="#accessible-development-with-html-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accessible Development with HTML 5</h1>
+
+<p>Learn how to design, test, and build accessible web UI,
+demonstrated by designers and developers at <a href="http://thoughtbot.com">thoughtbot</a>.</p>
+
+<p>In the process, learn about types of disabilities, standards and requirements,
+motivations for accessibility, along with testing tools and accessible UI
+libraries.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>We'll be doing live coding exercises with HTML, CSS, and JavaScript. A baseline
+understanding of web development with HTML will help you follow along.</p>
+
+<h3>
+<a id="equipment" class="anchor" href="#equipment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Equipment</h3>
+
+<ul>
+<li>Laptop</li>
+<li>Headphones (for when we turn on our screen readers).</li>
+</ul>
+
+<h3>
+<a id="software" class="anchor" href="#software" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software</h3>
+
+<h4>
+<a id="screen-readers" class="anchor" href="#screen-readers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Screen readers</h4>
+
+<p>OS X has a built-in screen reader called VoiceOver. For Windows, you can install
+one of the screen readers listed here:</p>
+
+<ul>
+<li>
+<a href="http://www.nvaccess.org/download/">NVDA</a> - Windows, donation-ware, open source</li>
+<li>
+<a href="http://www.freedomscientific.com/downloads/jaws">JAWS</a> - Windows, free trial</li>
+</ul>
+
+<h4>
+<a id="editors" class="anchor" href="#editors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Editors</h4>
+
+<p>Use the text editor of your choice for coding. Textmate is a friendly and
+powerful editor on OS X that also works well for blind developers using
+VoiceOver. Notepad++ on Windows works well with the JAWS screen reader.</p>
+
+<ul>
+<li>
+<a href="http://macromates.com/">Textmate</a> - OS X, accessible with VoiceOver</li>
+<li>
+<a href="https://notepad-plus-plus.org/">Notepad++</a> - Windows, accessible with JAWS</li>
+</ul>
+
+<h4>
+<a id="browsers" class="anchor" href="#browsers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browsers</h4>
+
+<p>We'll be using Safari for screen reader demoing and Chrome for inspecting page
+elements. Use whatever browser you like, keeping in mind that VoiceOver works
+best with Safari, JAWS with IE, and NVDA with Firefox (on Windows).</p>
+
+<hr>
+
+<h2>
+<a id="who" class="anchor" href="#who" aria-hidden="true"><span class="octicon octicon-link"></span></a>Who?</h2>
+
+<h3>
+<a id="cognitive" class="anchor" href="#cognitive" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cognitive</h3>
+
+<ul>
+<li>Memory</li>
+<li>Attention</li>
+<li>Problem-solving</li>
+<li>Language comprehension</li>
+<li>Math comprehension</li>
+<li>Visual comprehension</li>
+</ul>
+
+<h3>
+<a id="motor" class="anchor" href="#motor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Motor</h3>
+
+<ul>
+<li>Injury</li>
+<li>Congenital</li>
+</ul>
+
+<h3>
+<a id="hearing" class="anchor" href="#hearing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hearing</h3>
+
+<ul>
+<li>Deafness and hard of hearing</li>
+</ul>
+
+<h3>
+<a id="vision" class="anchor" href="#vision" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vision</h3>
+
+<ul>
+<li>Blindness</li>
+<li>Low vision</li>
+<li>Color blindness</li>
+</ul>
+
+<h2>
+<a id="why" class="anchor" href="#why" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why?</h2>
+
+<ul>
+<li>Legal obligation</li>
+<li>Social responsibility</li>
+<li>Opportunity</li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="building-accessibly" class="anchor" href="#building-accessibly" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building Accessibly</h2>
+
+<h3>
+<a id="learn" class="anchor" href="#learn" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learn</h3>
+
+<ul>
+<li>Blogs</li>
+<li>Stack overflow</li>
+<li><a href="http://web-a11y.herokuapp.com">web-a11y slack</a></li>
+<li>Twitter #a11y</li>
+<li><a href="http://www.meetup.com/a11ynyc">A11yNYC meetup</a></li>
+</ul>
+
+<h3>
+<a id="measure-capture-prioritize" class="anchor" href="#measure-capture-prioritize" aria-hidden="true"><span class="octicon octicon-link"></span></a>Measure, Capture, Prioritize</h3>
+
+<ul>
+<li>Usability testing</li>
+<li>Manual testing (keyboard, screenreader)</li>
+<li>Automated tools</li>
+<li>Bug tracking</li>
+</ul>
+
+<h3>
+<a id="fix" class="anchor" href="#fix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fix</h3>
+
+<ul>
+<li>Writing tests</li>
+<li>ARIA and native semantics</li>
+<li>Managing regressions</li>
+</ul>
+
+<h3>
+<a id="monitor" class="anchor" href="#monitor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Monitor</h3>
+
+<ul>
+<li>CI tests</li>
+<li>Accessibile support tools (email)</li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="legal-standards" class="anchor" href="#legal-standards" aria-hidden="true"><span class="octicon octicon-link"></span></a>Legal Standards</h2>
+
+<ul>
+<li>Section 508</li>
+<li>WCAG 2.0</li>
+</ul>
+
+<h2>
+<a id="guidelines" class="anchor" href="#guidelines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Guidelines</h2>
+
+<ul>
+<li><a href="https://playbook.cio.gov/designstandards/">US Web Design Standards</a></li>
+<li><a href="http://www.bbc.co.uk/guidelines/futuremedia/accessibility/">BBC Accessibility Guidelines</a></li>
+</ul>
+
+<h2>
+<a id="ui-frameworks--component-libraries" class="anchor" href="#ui-frameworks--component-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>UI Frameworks &amp; Component Libraries</h2>
+
+<ul>
+<li><a href="https://github.com/18F/web-design-standards">UI components for US Govt Websites</a></li>
+<li><a href="https://paypal.github.io/bootstrap-accessibility-plugin/">Bootstrap 3 Accessibility Plugin</a></li>
+<li><a href="https://material.angularjs.org/latest/">Angular Material</a></li>
+</ul>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<h3>
+<a id="libraries" class="anchor" href="#libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Libraries</h3>
+
+<ul>
+<li><a href="https://github.com/GoogleChrome/accessibility-developer-tools">Accessibility Developer Tools</a></li>
+<li><a href="https://github.com/dequelabs/axe-core">axe-core</a></li>
+</ul>
+
+<h3>
+<a id="extensions" class="anchor" href="#extensions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extensions</h3>
+
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd">aXe Chrome Extension</a></li>
+<li>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/">aXe Firefox extension</a> </li>
+<li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en">Accessibility Developer Tools Extension</a></li>
+<li><a href="https://khan.github.io/tota11y/">tota11y</a></li>
+</ul>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<ul>
+<li><a href="https://dylanb.github.io/todomvc/index.html#/">Todo List</a></li>
+<li><a href="https://marcysutton.github.io/angular-a11y/demos/scroll-ui/">Ticket Booking</a></li>
+</ul>
+
+<h2>
+<a id="articles" class="anchor" href="#articles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Articles</h2>
+
+<ul>
+<li><a href="http://www.smashingmagazine.com/2015/05/client-rendered-accessibility/">Notes On Client-Rendered Accessibility</a></li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ckundo/a11y-workshop">A11y-workshop</a> is maintained by <a href="https://github.com/ckundo">ckundo</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>

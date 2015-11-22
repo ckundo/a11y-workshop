@@ -1,0 +1,83 @@
+body {
+  align-items: center;
+  color: #273447;
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.4em;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  appearance: none;
+  background-color: #01baf1;
+  border-radius: 3px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.875em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.4em 1.2em;
+  text-decoration: none;
+  transition: background-color 200ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+
+button:hover,
+button:focus {
+  background-color: #0093bf;
+  color: #fff;
+}
+
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  max-width: 650px;
+}
+
+.app-information {
+  width: 45%;
+}
+
+.app-screenshot {
+  width: 50%;
+}
+
+.app-icon {
+  max-width: 44px;
+}
+
+.site-title {
+  font-weight: 400;
+}
+
+.site-tagline {
+  font-size: 1em;
+  font-weight: 400;
+}

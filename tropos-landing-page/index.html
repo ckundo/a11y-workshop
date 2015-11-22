@@ -7,40 +7,34 @@
   <title>Tropos: Phrase based weather conditions</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
   <link rel="stylesheet" href="styles.css">
+  <link href="jquery-ui.css" rel="stylesheet">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
 </head>
 <body>
 
   <main class="container" role="main">
-
     <div class="app-information">
-
       <img class="app-icon" src="images/tropos-app-icon.png" alt="Tropos app icon" role="">
       <h1 class="site-title">Tropos</h1>
       <h2 class="site-tagline">No dew points or ads.<br>Only weather information you can act on.</h2>
       <p><strong>Coming soon.</strong></p>
-      <button>Notify Me</button>
-
+      <button id="opener">Notify Me</button>
     </div>
 
     <div class="app-screenshot">
-
       <figure>
         <img src="images/tropos-app-screenshot.png" alt="iPhone with Tropos app open" aria-describedby="description">
         <figcaption class="visually-hidden" id="description">An iPhone with the Tropos app open. The app locates the phone to Boston and says &ldquo;It&rdquo;s warmer tonight than last night.&rdquo;</figcaption>
       </figure>
-
     </div>
-
   </main>
 
-<!--
-  <div class="modal-overlay">
+  <div id="dialog" title="Basic dialog" class="modal-overlay">
     <div class="modal" role="dialog">
-
       <p>Sign up so that we can let you know when we launch.</p>
 
       <form>
-
         <div class="field-unit">
           <label for="full_name">Full Name</label>
           <input type="text" id="full_name" placeholder="Bill Murray">
@@ -52,12 +46,21 @@
         </div>
 
         <input type="submit" value="Notify Me">
-
       </form>
-
     </div>
   </div>
- -->
+
+  <script>
+  $(function() {
+    $( "#dialog" ).dialog({
+      autoOpen: false
+    });
+
+    $( "#opener" ).click(function() {
+      $( "#dialog" ).dialog( "open" );
+    });
+  });
+  </script>
 
 </body>
 </html>

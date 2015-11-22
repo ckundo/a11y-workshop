@@ -1,0 +1,12 @@
+body {
+	background-color: maroon;
+	color: black;
+}
+
+main {
+	background: white;	
+}
+
+.menu:after {
+	content: "\25BC";
+}

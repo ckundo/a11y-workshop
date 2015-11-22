@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Weather and forecasts for humans. Information you can act on.">
+  <title>BoltBus</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+  <nav role="nav">
+	<ul>		  
+  		<li>Buy Tickets</li>
+  	  	<li>Where We Go</li>
+  	  	<li>Bolt Rewards</li>
+  	  	<li>Terms</li>
+  	  	<li>BusTracker</li>
+	</ul>
+  </nav>
+  <main class="container" role="main">
+	<h2>Buy Tickets</h2>
+	<form>
+		<label>
+		  Select your region: 
+		  <select id="region-select">
+			<option value="ne">Northeast</option>
+			<option value="wc">West coast</option>
+		  </select>			
+		</label><br>
+		<label>
+		  Where do you want to go?
+		  <select id="locations">
+			  <option data-region="wc">Albany, OR (112 SW 10th Ave)</option>
+			  <option data-region="wc">Barstow, CA (Carl's Jr., 2856 Lenwood Rd.)</option>
+			  <option data-region="wc">Bellingham, WA (4194 Cordata Pkwy.)</option>
+			  <option data-region="ne">Baltimore-1578 Maryland Ave. (near Marc-Penn Sta)</option>
+			  <option data-region="ne">Boston South Station - Gate 9 NYC-Gate 10 NWK/PHL</option>
+			  <option data-region="ne">Cherry Hill, NJ (Cherry Hill Mall)</option>
+		  </select>
+		  <div aria-live="polite">
+		  	<span id="update-notice"></span>
+	  	  </div>
+	  </label>
+    </form>
+  </main>
+  <script>
+	$(function() {
+	    $select = $("#region-select");
+	    	$select.change(function(event) {
+	  		var region = $select.val();
+	  		var $neLocations = $("[data-region=ne]");
+	  		var $wcLocations = $("[data-region=wc]");
+		
+	  		if(region === "ne") {
+	  			$wcLocations.hide();
+	  			$neLocations.show();
+	  		} else if (region === "wc") {
+	  			$neLocations.hide();
+	  			$wcLocations.show();
+	  		}
+		    $("#update-notice").text("locations updated!");
+	   });
+	});
+  </script>
+</body>
+</html>
